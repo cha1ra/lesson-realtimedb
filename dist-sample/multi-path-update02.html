@@ -58,8 +58,21 @@ const updates = {};
 updates[`users/${userKey}/name`] = name;
 // updates[`lessonAttendees/it_basic/${userKey}/name`] = name;
 
-update(ref(db), updates);
+// 生徒の受講している授業一覧を取得
+const studentLessonsRef = ref(db, `studentLessons/${userKey}`)
 
+// get()で1度だけ取得
+get(studentLessonsRef).then(snap => {
+  // キー情報を抜き出して配列化
+  const lessonKeys = Object.keys(snap.val());
+  // 配列の中身を一つずつ取り出して処理
+  lessonKeys.forEach(lessonKey => {
+    // パスを追加
+    updates[`lessonAttendees/${lessonKey}/${userKey}/name`] = name;
+  })
+  // 更新処理
+  update(ref(db), updates);
+})
 </script>
 </body>
 </html>
