@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>結合(join)</title>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>結合(join)の方法を学ぶ - 改良版</h1>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <section>
+      <div class="lessons-area">
+        <div class="lessons-area__card">
+          <div class="lessons-area__card__title">
+            <h3 id="lesson-name">授業名</h3>
+            <p id="lesson-description">授業概要</p>
+          </div>
+          <ul id="attendees">
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+<main>
+
+</main>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/firebase.js" type="module"></script>
+<script type="module">
+
+// Realtime Database 用 SDK貼り付け
+import {
+  getDatabase, ref, onChildAdded, get
+} from 'https://cdnjs.cloudflare.com/ajax/libs/firebase/9.6.6/firebase-database.min.js';
+
+// firebase の設定情報読み込み
+import app from './js/firebase.js';
+// Realtime Database の設定を読み込む
+const db = getDatabase(app);
+
+// 取得したい授業のキー
+const lessonKey = 'it_basic';
+
+const attendeesRef = ref(db, `lessonAttendees/${lessonKey}`);
+
+onChildAdded(attendeesRef, (snap) => {
+  const student = snap
+  const {name, grade} = student.val();
+  $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
+});
+
+// onChildAdded(attendeesRef, (snap) => {
+//   // 参加者する学生のデータへの参照を取得
+//   const studentRef = ref(db, `students/${snap.key}`);
+//   // 1回だけ情報を取得する
+//   get(studentRef).then((studentSnap) => {
+//     // 名前と学年を取り出す
+//     const { name, grade } = studentSnap.val();
+//     // 要素に追加する
+//     $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
+//   })
+// });
+
+</script>
+</body>
+</html>

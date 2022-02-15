@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Firebase設計 サンプル資料</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>履修希望集計システム</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h2>ユーザー情報</h2>
+                <div class="profile-card">
+                    <div class="avatar"></div>
+                    <p>サンプル太郎</p>
+                </div>
+            </section>
+            <section>
+                <h2>授業一覧と履修状況</h2>
+                <div class="lessons-area">
+                    <div class="lessons-area__card">
+                        <h3>授業ボンバー</h3>
+                        <ul>
+                            <li>ボンバー1号</li>
+                            <li>ボンバー2号</li>
+                            <li>ボンバー3号</li>
+                            <li>ボンバー4号</li>
+                        </ul>
+                    </div>
+                    <div class="lessons-area__card">
+                        <h3>授業ボンバー</h3>
+                        <ul>
+                            <li>ボンバー1号</li>
+                            <li>ボンバー2号</li>
+                            <li>ボンバー3号</li>
+                            <li>ボンバー4号</li>
+                        </ul>
+                    </div>
+                    <div class="lessons-area__card">
+                        <h3>授業ボンバー</h3>
+                        <ul>
+                            <li>ボンバー1号</li>
+                            <li>ボンバー2号</li>
+                            <li>ボンバー3号</li>
+                            <li>ボンバー4号</li>
+                        </ul>
+                    </div>
+                    <div class="lessons-area__card">
+                        <h3>授業ボンバー</h3>
+                        <ul>
+                            <li>ボンバー1号</li>
+                            <li>ボンバー2号</li>
+                            <li>ボンバー3号</li>
+                            <li>ボンバー4号</li>
+                        </ul>
+                    </div>
+                    <div class="lessons-area__card">
+                        <h3>授業ボンバー</h3>
+                        <ul>
+                            <li>ボンバー1号</li>
+                            <li>ボンバー2号</li>
+                            <li>ボンバー3号</li>
+                            <li>ボンバー4号</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+
+
+
+<!-- Firebase 設定スクリプト貼り付け開始 -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA3Lrfv1RSKWpeqcIrTU7_ldu4UMv7qYYg",
+      authDomain: "baas-pre-invest.firebaseapp.com",
+      projectId: "baas-pre-invest",
+      storageBucket: "baas-pre-invest.appspot.com",
+      messagingSenderId: "183606325095",
+      appId: "1:183606325095:web:f12a54f4a30675b76689c2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+</script>
+<!-- Firebase 設定スクリプト貼り付け終了 -->
+<script src="./js/script.js" type="module"></script>
+
+
+
+</body>
+</html>

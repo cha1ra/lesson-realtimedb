@@ -1,0 +1,98 @@
+{
+  "students" : {
+    "1" : {
+      "name" : "相馬 典生",
+      "grade" : 2
+    },
+    "2" : {
+      "name" : "若林 江美",
+      "grade" : 1
+    },
+    "3" : {
+      "name" : "篠崎 嘉郎",
+      "grade" : 3
+    },
+    "4" : {
+      "name" : "曽根崎 成恵",
+      "grade" : 4
+    },
+    "5" : {
+      "name" : "津田 健太",
+      "grade" : 1
+    }
+  },
+  "lessons" : {
+    "it_basic" : {
+      "name" : "情報基礎",
+      "description" : "HTML/CSSを通じてIT技術の基礎知識を養います"
+    },
+    "web_design" : {
+      "name" : "Webデザイン実践",
+      "description" : "XD, Figma を学習します"
+    },
+    "oop" : {
+      "name" : "オブジェクト指向プログラミング",
+      "description" : "Javaを題材にオブジェクト指向について学習します"
+    }
+  },
+  "lessonAttendees" : {
+    "it_basic": {
+      "1": {
+        "name": "相馬 典生",
+        "grade": 2
+      },
+      "2": {
+        "name": "若林 江美",
+        "grade": 1
+      },
+      "3": {
+        "name": "篠崎 嘉郎",
+        "grade": 3
+      }
+    },
+    "web_design": {
+      "1": {
+        "name": "相馬 典生",
+        "grade": 2
+      },
+      "3": {
+        "name": "篠崎 嘉郎",
+        "grade": 3
+      },
+      "4" : {
+        "name" : "曽根崎 成恵",
+        "grade" : 4
+      }
+    },
+    "oop": {
+      "1": {
+        "name": "相馬 典生",
+        "grade": 2
+      },
+      "5" : {
+        "name" : "津田 健太",
+        "grade" : 1
+      }
+    }
+  },
+  "studentLessons" : {
+    "1" : {
+      "it_basic" : true,
+      "web_design" : true,
+      "oop" : true
+    },
+    "2" : {
+      "it_basic" : true
+    },
+    "3" : {
+      "it_basic" : true,
+      "web_design" : true
+    },
+    "4" : {
+      "web_design" : true
+    },
+    "5" : {
+      "oop" : true
+    }
+  }
+}
