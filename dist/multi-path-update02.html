@@ -57,15 +57,9 @@ const name = '更新太郎';
 const updates = {};
 updates[`users/${userKey}/name`] = name;
 // updates[`lessonAttendees/it_basic/${userKey}/name`] = name;
-const studentLessonsRef = ref(db, `studentLessons/${userKey}`)
 
-get(studentLessonsRef).then(snap => {
-  const lessonKeys = Object.keys(snap.val());
-  lessonKeys.forEach(lessonKey => {
-    updates[`lessonAttendees/${lessonKey}/${userKey}/name`] = name;
-  })
-  update(ref(db), updates);
-})
+update(ref(db), updates);
+
 </script>
 </body>
 </html>
