@@ -55,26 +55,17 @@ const lessonKey = 'it_basic';
 const attendeesRef = ref(db, `lessonAttendees/${lessonKey}`);
 
 // ここから join01.htmlと違うところ
-// onChildAdded(attendeesRef, (snap) => {
-//   // 参加者する学生のデータへの参照を取得
-//   const studentRef = ref(db, `students/${snap.key}`);
-//   // 1回だけ情報を取得する
-//   get(studentRef).then((studentSnap) => {
-//     // 名前と学年を取り出す
-//     const { name, grade } = studentSnap.val();
-//     // 要素に追加する
-//     $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
-//   })
-// });
-
 onChildAdded(attendeesRef, (snap) => {
-  const student = snap
-  const {name, grade} = student.val();
-  $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
+  // 参加者する学生のデータへの参照を取得
+  const studentRef = ref(db, `students/${snap.key}`);
+  // 1回だけ情報を取得する
+  get(studentRef).then((studentSnap) => {
+    // 名前と学年を取り出す
+    const { name, grade } = studentSnap.val();
+    // 要素に追加する
+    $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
+  })
 });
-
-
-
 
 </script>
 </body>
