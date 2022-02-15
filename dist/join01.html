@@ -59,16 +59,7 @@ const attendeesRef = ref(db, `lessonAttendees/${lessonKey}`);
 
 onChildAdded(attendeesRef, (snap) => {
   console.log(snap.key, snap.val()); // 参加者の キー と バリュー
-
-  // キー情報から生徒への参照を取得
-  const studentRef = ref(db, `students/${snap.key}`);
-
-  // get() ... その情報を1回だけ取得する
-  get(studentRef).then((studentSnap) => {
-    console.log(studentSnap.val()); // 参加者のデータ
-    const { name, grade } = studentSnap.val();
-    $('#attendees').append(`<li>${name} (${grade}年生)</li>`);
-  })
+  $('#attendees').append(`<li>${snap.val()}</li>`);
 });
 
 </script>
